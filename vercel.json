@@ -1,10 +1,14 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/app/src/main/assets/web_studio.html" },
-    { "source": "/manifest.json", "destination": "/app/src/main/assets/manifest.json" },
-    { "source": "/sw.js", "destination": "/app/src/main/assets/sw.js" },
-    { "source": "/web_studio.html", "destination": "/app/src/main/assets/web_studio.html" },
-    { "source": "/(.*)", "destination": "/app/src/main/assets/$1" }
+  "trailingSlash": false,
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
